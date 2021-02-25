@@ -7,18 +7,18 @@ public class Sort {
     public static void main(String[] args) {
         //int[] liste = {0,9,4,6,2,8,5,1,7,3};
         //int[] liste = {0,1,2,3,4,6,5,7,8,9};
-        int[] liste = createArray(13);
+        int[] liste = createArray(10);
         long start = System.currentTimeMillis();
         System.out.println("Unsorted array");
-        printArray(liste);
+        //printArray(liste);
         //bubblesort(liste);
         //bubblesort2(liste);
         bubblesortMegaThron(liste);
         //insertionsort(liste);
-        //quickSort(liste, 0, 12);
+        //quickSort(liste, 0, 99999);
         System.out.println("Sorted array");
         System.out.println(System.currentTimeMillis() - start);
-        printArray(liste);
+        //printArray(liste);
     }
 
     public static int[] createArray(int number){
