@@ -57,6 +57,14 @@ public class Vorbereitung {
         }
         return true;
     }
+    public static void printArray(int arr[])
+    {
+        int n = arr.length;
+        for (int i=0; i<n; ++i){
+            System.out.print(arr[i] + " ");
+        }
+        System.out.println();
+    }
     public static void main(String[] args) {
         System.out.println("LB2-Uebung M411");
         System.out.println("Nachbarn w1: " + nachbarn(welt_1));
@@ -72,5 +80,6 @@ public class Vorbereitung {
     private static int[][] welt_2 = {{0, 0, 0}, {0, 0, 0}};
     private static int[] feld = {2, 34, 12, 6, 99, 2};
     private static int[] h_1 = {20, 8, 11, 8, 9, 9, 10, 2};
+
     private static int[] h_2 = {20, 8, 11, 8};
 }
