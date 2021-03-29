@@ -92,6 +92,20 @@ public class Sort {
         System.out.println("Changes: " + changes);
     }
 
+    public static void selectionSort(int[] liste){
+        for(int i = 0; i < liste.length - 1; i++){
+            int index = 1;
+            for (int j = i + 1; j < liste.length; j++){
+                if(liste[j] < liste[index]){
+                    index = j; //Searching for lowest index
+                }
+            }
+            int smallerNumber = liste[index];
+            liste[index] = liste[i];
+            liste[i] = smallerNumber;
+        }
+    }
+
     public static void quickSort(int arr[], int begin, int end) {
         if (begin < end) {
             int partitionIndex = partition(arr, begin, end);
