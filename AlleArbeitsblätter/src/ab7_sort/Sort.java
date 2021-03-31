@@ -42,6 +42,7 @@ public class Sort {
             }
         }
     }
+
     public static void bubblesort2(int[] liste){
         int n = liste.length;
         int max = (n-1) * (n/2);
@@ -55,6 +56,7 @@ public class Sort {
             }
         }
     }
+
     public static void bubblesortMegaThron(int[] liste){
         int n = liste.length;
         boolean switched;
@@ -76,6 +78,7 @@ public class Sort {
         }
         System.out.println("Changes: " + changes);
     }
+
     public static void insertionsort(int[] liste){
         int n = liste.length;
         int changes = 0;
@@ -113,6 +116,7 @@ public class Sort {
             quickSort(arr, partitionIndex+1, end);
         }
     }
+
     private static int partition(int arr[], int begin, int end) {
         int pivot = arr[end];
         int i = (begin-1);

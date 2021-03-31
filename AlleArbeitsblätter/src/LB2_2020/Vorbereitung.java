@@ -1,5 +1,7 @@
 package LB2_2020;
 
+import java.lang.reflect.Array;
+
 public class Vorbereitung {
     public static int nachbarn(int[][] Welt) {
         int anzahl = 0;
@@ -20,6 +22,7 @@ public class Vorbereitung {
         }
         return  -1;
     }
+
     public static void bubblesort(int[] liste) {
         int n = liste.length;
         boolean switched = true;
@@ -38,6 +41,7 @@ public class Vorbereitung {
             }
         }
     }
+
     public static int binom(int n, int k) {
         double n1 = (double) n;
         double k1 = (double) k;
@@ -48,6 +52,7 @@ public class Vorbereitung {
         }
         return (int) ((n1+1-k1)/k1*binom((int)n1,(int)k1-1));
     }
+
     public static boolean isMaxHeap(int[] arr) {
         int N = arr.length;
         for (int i = (N - 2) / 2; i > -1; --i) { // start from the first internal node who has children;
@@ -57,6 +62,36 @@ public class Vorbereitung {
         }
         return true;
     }
+
+    public static boolean isMinHeap(int[] A) {
+        // check for all internal nodes that their left child and
+        // right child (if present) holds min-heap property or not
+        // start with index 0 (the root of the heap)
+        for (int i = 0; i <= (A.length - 2) / 2; i++) {
+            if (A[i] > A[2 * i + 1] || (2 * i + 2 != A.length && A[i] > A[2 * i + 2])) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public static boolean isMinHeapRek(int[] A, int i) {
+        // if `i` is a leaf node, return true as every leaf node is a heap
+        if (2*i + 2 > A.length) {
+            return true;
+        }
+        // if `i` is an internal node
+        // recursively check if the left child is a heap
+        boolean left = (A[i] <= A[2*i + 1]) && isMinHeapRek(A, 2*i + 1);
+
+        // recursively check if the right child is a heap (to avoid the array index out
+        // of bounds, first check if the right child exists or not)
+        boolean right = (2*i + 2 == A.length) ||
+                (A[i] <= A[2*i + 2] && isMinHeapRek(A, 2*i + 2));
+        // return true if both left and right child are heaps
+        return left && right;
+    }
+
     public static void printArray(int arr[])
     {
         int n = arr.length;
